@@ -6,6 +6,10 @@
   		#menu{
   		width: 200px;
   		}
+  		.panel-title{
+  		 text-align: center;
+  		 font-size: 15px;
+  		}
   		#menu ul{
   		list-style: none;
   		padding: 0px;
@@ -16,11 +20,11 @@
   		}
   		#menu ul li a{
   		display:block;
-  		background-color: #008792;
-  		color: #fff;
+  		background-color: #C7EDCC;
   		padding: 0px;
   		text-decoration: none;
-  		font-size: 14px;
+  		font-size: 13px;
+  		text-align: center;
   		}
   		#menu ul li a:HOVER{
   		background-color: #00a6ac;
@@ -28,8 +32,14 @@
   		#topmenu{
   			width:100%;
   			height:100%;
-  			background-color: #E8F1FF;
-  		}
+	  		FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#cff,endColorStr=#ace); /*IE 6 7 8*/ 
+			background: -ms-linear-gradient(top,#cff,#ace);        /* IE 10 */
+			background:-moz-linear-gradient(top,#cff,#ace);/*火狐*/ 
+			background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#cff), to(#ace));/*谷歌*/ 
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cff), to(#ace));/* Safari 4-5, Chrome 1-9*/
+			background: -webkit-linear-gradient(top,#cff,#ace);   /*Safari5.1 Chrome 10+*/
+			background: -o-linear-gradient(top,#cff,#ace);  /*Opera 11.10+*/
+		}
   	</style>
   	<script type="text/javascript">
   		$(function(){
@@ -54,13 +64,20 @@
   </head>
   
 <body class="easyui-layout">
-    <div data-options="region:'north',title:'',split:true" style="height:45px;">
+    <div data-options="region:'north',title:''" style="height:60px;width: auto;" >
     	<div id="topmenu">
-    		<div id="top"><font size="5px">欢迎来到易淘网站后台管理</font></div>
+    		<div id="top" style="padding: 10px;10px;margin-left: 60px; float: left;"><font size="5px" color="black">欢迎来到易淘网站后台管理</font></div>
+    		<div id="top" style="padding: 16px;10px; float: right;"><font size="3px" color="blue">欢迎xx登录系统，</font>
+    			<a>修改密码</a>
+    			<a>注销</a>
+    		</div>
     	</div>
-    </div>   
-    <div data-options="region:'west',title:'系统菜单',split:true" style="width:200px">
-    	<div id="menu" class="easyui-accordion" style="height:300px;width:200px"><!-- data-options="fit:true" --> 
+    </div>
+    <div data-options="region:'south'" style="height:20px; width: auto; background-color: #CCFFFF">
+    	<div align="center"><a><font color="black">Copyright 2013-2016 All Rights Reserved 版权所有 信息技术有限公司</font></a></div>
+    </div>  
+    <div data-options="region:'west',title:'系统菜单'" style="width:204px;">
+    	<div id="menu" class="easyui-accordion" style="height:auto;width:200px"><!-- data-options="fit:true" --> 
 		    <div title="常用操作">   
 			    <ul>
 			    	<li><a href="#" title="#"><i class="icon-font">&#xe008;</i>作品管理</a></li>
@@ -112,7 +129,7 @@
 		     	欢迎来到后台管理。
 		    </div>   
 		</div>  
-    </div>   
+    </div>
     <div id="addupdate" data-options:"collapsible:false,minimizable:false,maximizable:false"/>
 </body>  
 
